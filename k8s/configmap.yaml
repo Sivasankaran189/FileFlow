@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: fileflow-config
+  namespace: fileflow
+data:
+  # Uses host.docker.internal so pods reach Floci running on Windows
+  FLOCI_ENDPOINT_URL: "http://host.docker.internal:4566"
+  AWS_REGION: "us-east-1"
+  S3_BUCKET_NAME: "fileflow-bucket"
+  SQS_QUEUE_NAME: "fileflow-jobs-queue"
+  DYNAMODB_TABLE_NAME: "fileflow-jobs"

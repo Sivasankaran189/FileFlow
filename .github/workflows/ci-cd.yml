@@ -1,0 +1,106 @@
+name: FileFlow CI/CD Pipeline
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  # ========================================================
+  # STAGE 1: AUTOMATED TESTING & CODE QUALITY
+  # ========================================================
+  test:
+    name: Run Unit Tests & Build Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      # Backend Test Suite
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install Backend Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r backend/requirements.txt
+
+      - name: Execute Backend Tests (pytest)
+        run: |
+          pytest -v backend/tests/
+
+      # Frontend Build Check
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install Frontend Dependencies & Build Check
+        run: |
+          cd frontend
+          npm ci
+          npm run build
+
+  # ========================================================
+  # STAGE 2: CONTAINER BUILD & IMAGE SECURITY SCAN
+  # ========================================================
+  build-and-scan:
+    name: Build Docker Images & Security Scan
+    needs: test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: actions/setup-buildx-action@v3
+
+      # Build Backend Image
+      - name: Build FileFlow API Image
+        run: |
+          docker build -f docker/Dockerfile.api -t fileflow-api:${{ github.sha }} .
+
+      # Build Frontend Image
+      - name: Build FileFlow Frontend Image
+        run: |
+          docker build -f docker/Dockerfile.frontend -t fileflow-frontend:${{ github.sha }} .
+
+      # Security Vulnerability Scan (Trivy)
+      - name: Run Trivy Security Scan on API Image
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: "fileflow-api:${{ github.sha }}"
+          format: "table"
+          exit-code: "0" # Set to 1 if you want builds to fail on critical CVEs
+          severity: "CRITICAL,HIGH"
+
+  # ========================================================
+  # STAGE 3: KUBERNETES MANIFEST LINTING & DRY-RUN
+  # ========================================================
+  validate-k8s:
+    name: Validate Kubernetes Manifests
+    needs: build-and-scan
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Set up kubectl
+        uses: azure/setup-kubectl@v3
+        with:
+          version: "v1.29.0"
+
+      - name: Client-Side Kubernetes Dry Run
+        run: |
+          kubectl apply --dry-run=client -f k8s/
+          kubectl apply --dry-run=client -f monitoring/prometheus/
+          kubectl apply --dry-run=client -f monitoring/grafana/

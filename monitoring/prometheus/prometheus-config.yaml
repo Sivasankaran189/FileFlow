@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: prometheus-config
+  namespace: fileflow
+data:
+  prometheus.yml: |
+    global:
+      scrape_interval: 5s
+      evaluation_interval: 5s
+
+    scrape_configs:
+      - job_name: "fileflow-api"
+        metrics_path: "/metrics"
+        static_configs:
+          - targets: ["fileflow-api-service.fileflow.svc.cluster.local:8000"]

@@ -1,0 +1,59 @@
+{
+  "jobId": "job-74bcc3-1792255944",
+  "fileName": "enterprise_sample_dataset.csv",
+  "processedAt": "2026-10-17 16:52:26Z",
+  "summary": {
+    "totalRows": 12,
+    "validRows": 6,
+    "invalidRows": 6,
+    "duplicateRows": 1,
+    "errorBreakdown": [
+      {
+        "row": 2,
+        "column": "email",
+        "issue": "Malformed email address format",
+        "value": "liam_gallagher_at_domain"
+      },
+      {
+        "row": 3,
+        "column": "amount",
+        "issue": "Negative numeric value not permitted",
+        "value": "-45.00"
+      },
+      {
+        "row": 4,
+        "column": "quantity",
+        "issue": "Expected numeric value, received text",
+        "value": "five"
+      },
+      {
+        "row": 5,
+        "column": "email",
+        "issue": "Missing or null value in record",
+        "value": "null"
+      },
+      {
+        "row": 7,
+        "column": "(Entire Record)",
+        "issue": "Duplicate row identical to a preceding record",
+        "value": "Duplicate"
+      },
+      {
+        "row": 11,
+        "column": "quantity",
+        "issue": "Missing or null value in record",
+        "value": "null"
+      }
+    ],
+    "columns": [
+      "transaction_id",
+      "customer_name",
+      "email",
+      "amount",
+      "quantity",
+      "status",
+      "created_at"
+    ],
+    "columnCount": 7
+  }
+}

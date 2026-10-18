@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fileflow-api
+  namespace: fileflow
+  labels:
+    app: fileflow-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fileflow-api
+  template:
+    metadata:
+      labels:
+        app: fileflow-api
+    spec:
+      containers:
+      - name: api
+        image: fileflow-api:v1
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8000
+        envFrom:
+        - configMapRef:
+            name: fileflow-config
+        - secretRef:
+            name: fileflow-secrets
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+          limits:
+            cpu: "500m"
+            memory: "256Mi"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 5
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 3
+          periodSeconds: 5

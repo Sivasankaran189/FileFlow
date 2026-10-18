@@ -1,0 +1,18 @@
+{
+  "jobId": "job-0ed343-1792254945",
+  "fileName": "test_upload.csv",
+  "processedAt": "2026-10-17 16:35:46Z",
+  "summary": {
+    "totalRows": 1,
+    "validRows": 1,
+    "invalidRows": 0,
+    "duplicateRows": 0,
+    "errorBreakdown": [],
+    "columns": [
+      "col1",
+      "col2",
+      "email"
+    ],
+    "columnCount": 3
+  }
+}

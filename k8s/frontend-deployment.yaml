@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fileflow-frontend
+  namespace: fileflow
+  labels:
+    app: fileflow-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fileflow-frontend
+  template:
+    metadata:
+      labels:
+        app: fileflow-frontend
+    spec:
+      containers:
+      - name: frontend
+        image: fileflow-frontend:v1
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            cpu: "50m"
+            memory: "64Mi"
+          limits:
+            cpu: "250m"
+            memory: "128Mi"

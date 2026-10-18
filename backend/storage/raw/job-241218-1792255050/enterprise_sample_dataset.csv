@@ -1,0 +1,13 @@
+transaction_id,customer_name,email,amount,quantity,status,created_at
+tx_1001,Sophia Bennett,sophia.bennett@example.com,249.50,2,COMPLETED,2026-03-15T09:30:00Z
+tx_1002,Liam Gallagher,liam_gallagher_at_domain,120.00,1,PENDING,2026-03-15T10:14:22Z
+tx_1003,Emma Watson,emma.w@corporate.co,-45.00,3,COMPLETED,2026-03-15T11:05:10Z
+tx_1004,Noah Patel,noah.patel@webmail.org,89.90,five,FAILED,2026-03-15T11:45:00Z
+tx_1005,Olivia Chen,,560.25,4,COMPLETED,2026-03-15T12:00:19Z
+tx_1006,Lucas Rodriguez,lucas.r@technova.io,310.00,1,COMPLETED,2026-03-15T13:21:40Z
+tx_1006,Lucas Rodriguez,lucas.r@technova.io,310.00,1,COMPLETED,2026-03-15T13:21:40Z
+tx_1007,Aria Montgomery,aria.m@designstudio.net,1420.00,6,COMPLETED,2026/99/99
+tx_1008,Ethan Vance,ethan.vance@acme.org,75.50,1,COMPLETED,2026-03-16T08:12:30Z
+tx_1009,Mia Tanaka,mia.tanaka@tokyotech.jp,430.00,2,COMPLETED,2026-03-16T09:40:11Z
+tx_1010,Alexander Wright,alex.wright@venture.co,99.95,null,PENDING,2026-03-16T10:15:00Z
+tx_1011,Charlotte Davis,charlotte.d@horizon.io,815.00,5,COMPLETED,2026-03-16T11:22:45Z

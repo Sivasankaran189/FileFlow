@@ -1,0 +1,918 @@
+[
+  {
+    "id": "job-8f921a-2026",
+    "fileName": "q3_transactions.csv",
+    "fileSize": "4.2 MB",
+    "fileSizeBytes": 4404019,
+    "status": "COMPLETED",
+    "submittedAt": "10 mins ago",
+    "elapsedTime": "2.4s",
+    "results": {
+      "totalRows": 1250,
+      "validRows": 1180,
+      "invalidRows": 50,
+      "duplicateRows": 20,
+      "errorBreakdown": [
+        {
+          "row": 14,
+          "column": "email",
+          "issue": "Malformed email address format",
+          "value": "user_at_domain"
+        },
+        {
+          "row": 42,
+          "column": "amount",
+          "issue": "Negative amount not allowed",
+          "value": "-45.00"
+        },
+        {
+          "row": 89,
+          "column": "created_at",
+          "issue": "Invalid ISO 8601 timestamp",
+          "value": "2026/13/45"
+        },
+        {
+          "row": 112,
+          "column": "quantity",
+          "issue": "Expected integer, received string",
+          "value": "ten"
+        }
+      ],
+      "columns": [
+        "transaction_id",
+        "email",
+        "amount",
+        "quantity",
+        "created_at"
+      ],
+      "columnCount": 5
+    },
+    "error": null,
+    "created_timestamp": 1792254939.929678
+  },
+  {
+    "id": "job-3a47c0-2026",
+    "fileName": "customer_leads.csv",
+    "fileSize": "1.1 MB",
+    "fileSizeBytes": 1153433,
+    "status": "FAILED",
+    "submittedAt": "1 hour ago",
+    "elapsedTime": "0.8s",
+    "results": null,
+    "error": "Missing required column: 'account_id'",
+    "created_timestamp": 1792254940.618319
+  },
+  {
+    "id": "job-79397c-1792254944",
+    "fileName": "enterprise_sample_dataset.csv",
+    "fileSize": "1.0 KB",
+    "fileSizeBytes": 1052,
+    "status": "COMPLETED",
+    "submittedAt": "2026-10-17 16:35:44 UTC",
+    "elapsedTime": "0.88s",
+    "results": {
+      "totalRows": 12,
+      "validRows": 6,
+      "invalidRows": 6,
+      "duplicateRows": 1,
+      "errorBreakdown": [
+        {
+          "row": 2,
+          "column": "email",
+          "issue": "Malformed email address format",
+          "value": "liam_gallagher_at_domain"
+        },
+        {
+          "row": 3,
+          "column": "amount",
+          "issue": "Negative numeric value not permitted",
+          "value": "-45.00"
+        },
+        {
+          "row": 4,
+          "column": "quantity",
+          "issue": "Expected numeric value, received text",
+          "value": "five"
+        },
+        {
+          "row": 5,
+          "column": "email",
+          "issue": "Missing or null value in record",
+          "value": "null"
+        },
+        {
+          "row": 7,
+          "column": "(Entire Record)",
+          "issue": "Duplicate row identical to a preceding record",
+          "value": "Duplicate"
+        },
+        {
+          "row": 11,
+          "column": "quantity",
+          "issue": "Missing or null value in record",
+          "value": "null"
+        }
+      ],
+      "columns": [
+        "transaction_id",
+        "customer_name",
+        "email",
+        "amount",
+        "quantity",
+        "status",
+        "created_at"
+      ],
+      "columnCount": 7
+    },
+    "error": null,
+    "created_timestamp": 1792254944.9777462
+  },
+  {
+    "id": "job-0ed343-1792254945",
+    "fileName": "test_upload.csv",
+    "fileSize": "42 B",
+    "fileSizeBytes": 42,
+    "status": "COMPLETED",
+    "submittedAt": "2026-10-17 16:35:45 UTC",
+    "elapsedTime": "0.91s",
+    "results": {
+      "totalRows": 1,
+      "validRows": 1,
+      "invalidRows": 0,
+      "duplicateRows": 0,
+      "errorBreakdown": [],
+      "columns": [
+        "col1",
+        "col2",
+        "email"
+      ],
+      "columnCount": 3
+    },
+    "error": null,
+    "created_timestamp": 1792254945.3136568
+  },
+  {
+    "id": "job-241218-1792255050",
+    "fileName": "enterprise_sample_dataset.csv",
+    "fileSize": "1.0 KB",
+    "fileSizeBytes": 1052,
+    "status": "COMPLETED",
+    "submittedAt": "2026-10-17 16:37:30 UTC",
+    "elapsedTime": "0.97s",
+    "results": {
+      "totalRows": 12,
+      "validRows": 6,
+      "invalidRows": 6,
+      "duplicateRows": 1,
+      "errorBreakdown": [
+        {
+          "row": 2,
+          "column": "email",
+          "issue": "Malformed email address format",
+          "value": "liam_gallagher_at_domain"
+        },
+        {
+          "row": 3,
+          "column": "amount",
+          "issue": "Negative numeric value not permitted",
+          "value": "-45.00"
+        },
+        {
+          "row": 4,
+          "column": "quantity",
+          "issue": "Expected numeric value, received text",
+          "value": "five"
+        },
+        {
+          "row": 5,
+          "column": "email",
+          "issue": "Missing or null value in record",
+          "value": "null"
+        },
+        {
+          "row": 7,
+          "column": "(Entire Record)",
+          "issue": "Duplicate row identical to a preceding record",
+          "value": "Duplicate"
+        },
+        {
+          "row": 11,
+          "column": "quantity",
+          "issue": "Missing or null value in record",
+          "value": "null"
+        }
+      ],
+      "columns": [
+        "transaction_id",
+        "customer_name",
+        "email",
+        "amount",
+        "quantity",
+        "status",
+        "created_at"
+      ],
+      "columnCount": 7
+    },
+    "error": null,
+    "created_timestamp": 1792255050.0290751
+  },
+  {
+    "id": "job-74bcc3-1792255944",
+    "fileName": "enterprise_sample_dataset.csv",
+    "fileSize": "1.0 KB",
+    "fileSizeBytes": 1052,
+    "status": "COMPLETED",
+    "submittedAt": "2026-10-17 16:52:24 UTC",
+    "elapsedTime": "1.01s",
+    "results": {
+      "totalRows": 12,
+      "validRows": 6,
+      "invalidRows": 6,
+      "duplicateRows": 1,
+      "errorBreakdown": [
+        {
+          "row": 2,
+          "column": "email",
+          "issue": "Malformed email address format",
+          "value": "liam_gallagher_at_domain"
+        },
+        {
+          "row": 3,
+          "column": "amount",
+          "issue": "Negative numeric value not permitted",
+          "value": "-45.00"
+        },
+        {
+          "row": 4,
+          "column": "quantity",
+          "issue": "Expected numeric value, received text",
+          "value": "five"
+        },
+        {
+          "row": 5,
+          "column": "email",
+          "issue": "Missing or null value in record",
+          "value": "null"
+        },
+        {
+          "row": 7,
+          "column": "(Entire Record)",
+          "issue": "Duplicate row identical to a preceding record",
+          "value": "Duplicate"
+        },
+        {
+          "row": 11,
+          "column": "quantity",
+          "issue": "Missing or null value in record",
+          "value": "null"
+        }
+      ],
+      "columns": [
+        "transaction_id",
+        "customer_name",
+        "email",
+        "amount",
+        "quantity",
+        "status",
+        "created_at"
+      ],
+      "columnCount": 7
+    },
+    "error": null,
+    "created_timestamp": 1792255944.8116965
+  },
+  {
+    "id": "job-914825-1792256084",
+    "fileName": "customers-100.csv",
+    "fileSize": "16.3 KB",
+    "fileSizeBytes": 16682,
+    "status": "COMPLETED",
+    "submittedAt": "2026-10-17 16:54:44 UTC",
+    "elapsedTime": "1.02s",
+    "results": {
+      "totalRows": 100,
+      "validRows": 0,
+      "invalidRows": 100,
+      "duplicateRows": 0,
+      "errorBreakdown": [
+        {
+          "row": 1,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Finland"
+        },
+        {
+          "row": 2,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "New Zealand"
+        },
+        {
+          "row": 3,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Cayman Islands"
+        },
+        {
+          "row": 4,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Svalbard & Jan Mayen Islands"
+        },
+        {
+          "row": 5,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Trinidad and Tobago"
+        },
+        {
+          "row": 6,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Vanuatu"
+        },
+        {
+          "row": 7,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Malaysia"
+        },
+        {
+          "row": 8,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Wallis and Futuna"
+        },
+        {
+          "row": 9,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Jamaica"
+        },
+        {
+          "row": 10,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Poland"
+        },
+        {
+          "row": 11,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Senegal"
+        },
+        {
+          "row": 12,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Guinea"
+        },
+        {
+          "row": 13,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Denmark"
+        },
+        {
+          "row": 14,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Uzbekistan"
+        },
+        {
+          "row": 15,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Nepal"
+        },
+        {
+          "row": 16,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Mayotte"
+        },
+        {
+          "row": 17,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Sierra Leone"
+        },
+        {
+          "row": 18,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Turkey"
+        },
+        {
+          "row": 19,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Australia"
+        },
+        {
+          "row": 20,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Peru"
+        },
+        {
+          "row": 21,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Namibia"
+        },
+        {
+          "row": 22,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Greenland"
+        },
+        {
+          "row": 23,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Morocco"
+        },
+        {
+          "row": 24,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "India"
+        },
+        {
+          "row": 25,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Tokelau"
+        },
+        {
+          "row": 26,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Senegal"
+        },
+        {
+          "row": 27,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Ghana"
+        },
+        {
+          "row": 28,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Gabon"
+        },
+        {
+          "row": 29,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Slovakia (Slovak Republic)"
+        },
+        {
+          "row": 30,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Armenia"
+        },
+        {
+          "row": 31,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Saint Lucia"
+        },
+        {
+          "row": 32,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Colombia"
+        },
+        {
+          "row": 33,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Norway"
+        },
+        {
+          "row": 34,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Central African Republic"
+        },
+        {
+          "row": 35,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Cook Islands"
+        },
+        {
+          "row": 36,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Netherlands"
+        },
+        {
+          "row": 37,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Guinea-Bissau"
+        },
+        {
+          "row": 38,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Ukraine"
+        },
+        {
+          "row": 39,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Czech Republic"
+        },
+        {
+          "row": 40,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Costa Rica"
+        },
+        {
+          "row": 41,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Niue"
+        },
+        {
+          "row": 42,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Congo"
+        },
+        {
+          "row": 43,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Benin"
+        },
+        {
+          "row": 44,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Ukraine"
+        },
+        {
+          "row": 45,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Saint Martin"
+        },
+        {
+          "row": 46,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Saudi Arabia"
+        },
+        {
+          "row": 47,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Iraq"
+        },
+        {
+          "row": 48,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Croatia"
+        },
+        {
+          "row": 49,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Tunisia"
+        },
+        {
+          "row": 50,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Korea"
+        },
+        {
+          "row": 51,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Gambia"
+        },
+        {
+          "row": 52,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Niue"
+        },
+        {
+          "row": 53,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Australia"
+        },
+        {
+          "row": 54,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Andorra"
+        },
+        {
+          "row": 55,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Guinea-Bissau"
+        },
+        {
+          "row": 56,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Guinea-Bissau"
+        },
+        {
+          "row": 57,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Afghanistan"
+        },
+        {
+          "row": 58,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Kuwait"
+        },
+        {
+          "row": 59,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Bahrain"
+        },
+        {
+          "row": 60,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Ireland"
+        },
+        {
+          "row": 61,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Kyrgyz Republic"
+        },
+        {
+          "row": 62,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Dominican Republic"
+        },
+        {
+          "row": 63,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Zimbabwe"
+        },
+        {
+          "row": 64,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Argentina"
+        },
+        {
+          "row": 65,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Fiji"
+        },
+        {
+          "row": 66,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Ireland"
+        },
+        {
+          "row": 67,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Australia"
+        },
+        {
+          "row": 68,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Kiribati"
+        },
+        {
+          "row": 69,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Qatar"
+        },
+        {
+          "row": 70,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Syrian Arab Republic"
+        },
+        {
+          "row": 71,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Switzerland"
+        },
+        {
+          "row": 72,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Faroe Islands"
+        },
+        {
+          "row": 73,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "United States of America"
+        },
+        {
+          "row": 74,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Ghana"
+        },
+        {
+          "row": 75,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Saint Martin"
+        },
+        {
+          "row": 76,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "United Kingdom"
+        },
+        {
+          "row": 77,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Bosnia and Herzegovina"
+        },
+        {
+          "row": 78,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Gibraltar"
+        },
+        {
+          "row": 79,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Honduras"
+        },
+        {
+          "row": 80,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Falkland Islands (Malvinas)"
+        },
+        {
+          "row": 81,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Solomon Islands"
+        },
+        {
+          "row": 82,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Togo"
+        },
+        {
+          "row": 83,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Ethiopia"
+        },
+        {
+          "row": 84,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Turkmenistan"
+        },
+        {
+          "row": 85,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Mauritania"
+        },
+        {
+          "row": 86,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Mauritania"
+        },
+        {
+          "row": 87,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Mozambique"
+        },
+        {
+          "row": 88,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Comoros"
+        },
+        {
+          "row": 89,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Kyrgyz Republic"
+        },
+        {
+          "row": 90,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Tanzania"
+        },
+        {
+          "row": 91,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Malta"
+        },
+        {
+          "row": 92,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Sierra Leone"
+        },
+        {
+          "row": 93,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Armenia"
+        },
+        {
+          "row": 94,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Saint Vincent and the Grenadines"
+        },
+        {
+          "row": 95,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Kiribati"
+        },
+        {
+          "row": 96,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Australia"
+        },
+        {
+          "row": 97,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Saint Martin"
+        },
+        {
+          "row": 98,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Paraguay"
+        },
+        {
+          "row": 99,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Maldives"
+        },
+        {
+          "row": 100,
+          "column": "Country",
+          "issue": "Expected numeric value, received text",
+          "value": "Congo"
+        }
+      ],
+      "columns": [
+        "Index",
+        "Customer Id",
+        "First Name",
+        "Last Name",
+        "Company",
+        "City",
+        "Country",
+        "Phone 1",
+        "Phone 2",
+        "Email",
+        "Subscription Date",
+        "Website"
+      ],
+      "columnCount": 12
+    },
+    "error": null,
+    "created_timestamp": 1792256084.5917215
+  }
+]
