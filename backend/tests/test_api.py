@@ -18,7 +18,7 @@ class TestFileFlowBackend(unittest.TestCase):
     def test_health_endpoint(self):
         """Verify health probe endpoint returns 200 OK."""
         response = self.client.get("/health")
-        self.assertEqual(response.status_code, 404)
+        self.assertEqual(response.status_code, 200)
         data = response.json()
         self.assertEqual(data["status"], "healthy")
         self.assertIn("FileFlow", data["service"])
