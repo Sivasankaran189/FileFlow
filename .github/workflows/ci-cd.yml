@@ -60,9 +60,6 @@ jobs:
       - name: Checkout Source Code
         uses: actions/checkout@v4
 
-      - name: Set up Docker Buildx
-        uses: actions/setup-buildx-action@v3
-
       # Build Backend Image
       - name: Build FileFlow API Image
         run: |
@@ -73,14 +70,13 @@ jobs:
         run: |
           docker build -f docker/Dockerfile.frontend -t fileflow-frontend:${{ github.sha }} .
 
-      # Security Vulnerability Scan (Trivy)
+      # Security Vulnerability Scan (Direct Docker-based Trivy)
       - name: Run Trivy Security Scan on API Image
-        uses: aquasecurity/trivy-action@master
-        with:
-          image-ref: "fileflow-api:${{ github.sha }}"
-          format: "table"
-          exit-code: "0" # Set to 1 if you want builds to fail on critical CVEs
-          severity: "CRITICAL,HIGH"
+        run: |
+          docker run --rm -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy:latest image \
+            --severity HIGH,CRITICAL \
+            --exit-code 0 \
+            fileflow-api:${{ github.sha }}
 
   # ========================================================
   # STAGE 3: KUBERNETES MANIFEST LINTING & DRY-RUN
@@ -94,10 +90,11 @@ jobs:
       - name: Checkout Source Code
         uses: actions/checkout@v4
 
-      - name: Set up kubectl
-        uses: azure/setup-kubectl@v3
-        with:
-          version: "v1.29.0"
+      - name: Install kubectl
+        run: |
+          curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+          chmod +x kubectl
+          sudo mv kubectl /usr/local/bin/
 
       - name: Client-Side Kubernetes Dry Run
         run: |
