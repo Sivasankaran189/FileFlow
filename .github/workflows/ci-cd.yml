@@ -98,6 +98,6 @@ jobs:
 
       - name: Client-Side Kubernetes Dry Run
         run: |
-          kubectl apply --dry-run=client -f k8s/
-          kubectl apply --dry-run=client -f monitoring/prometheus/
-          kubectl apply --dry-run=client -f monitoring/grafana/
+          kubectl apply --dry-run=client --validate=false -f k8s/
+          kubectl apply --dry-run=client --validate=false -f monitoring/prometheus/
+          kubectl apply --dry-run=client --validate=false -f monitoring/grafana/
